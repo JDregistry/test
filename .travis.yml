@@ -1,0 +1,13 @@
+language: java
+before_install:
+- ./gradlew clean
+before_deploy:
+- ./gradlew generatePomFileForMavenPublication
+deploy:
+  provider: bintray
+  file: descriptor.json
+  user: lukaszimmermann
+  dry-run: false
+  skip_cleanup: true
+  key:
+    secure: YsaOGqFAgI298aa64pFonvaNa6mYQCDTIfP50XDA/1W48ZH2XhVBSCwNLyzraBWqK67kJUwrW1Ht1rAuM8q9yjFNAhwRiSILD51U1W0ZkmR32iBlW9NBdTK4W6wUWkSYRnh4B4WjN36dqh7EgrRVSEonoTCnsywuetNHp4GNtZO2gOde6bwIoq+DaDw3/laTRZJM3I9VWIIp6m6l4twFG3HRaS7/ZxWv/0+/Dczs2wmDQzMrnSJ4csgpvb7mGxsNqsn3Ba5OegX8zylu9gd6A8cwRbGKy1tJ25vvu/LsODSyvUl8D9NkvwtGjy1BXc2/O84lanvJzwb3leJH5d49x3aCM0clOfhGFdqWO8Av0Oh6diZns9RiSg/thUWnQ9MuRikRmCultLkoJXYJ3/Y/XMmKGRB6NsvFNNt+0WPpIMT2ZDlg3thGUMB0wssmCDvafFUSJaHscIOgcylWumHBSy1+ZG68glkZaAQ97Khx3ThCXWQJR29s5HoaxTA8LT4WwpaqRA5mZjr5THHUa4xPJ14qesKRfaxB0npHiMJnvvJMiyjfSu8Obj8Qrkbf5TwWM6lcG8S0/n1STTY+2Ou5NPmlXSa2QvyiTEglyf3WYZvrwYIKpOGZxZnn77r6MRvFfw4X0J/eIRGEhap0wCElGAFCyZnitSPHm2QwObNM9cg=
